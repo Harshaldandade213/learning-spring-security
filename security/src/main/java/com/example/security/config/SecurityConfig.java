@@ -12,6 +12,7 @@ import org.springframework.web.server.handler.DefaultWebFilterChain;
 public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity){
+        httpSecurity.csrf(customizer-> customizer.disable()) ;
        return httpSecurity.build() ;
     }
 }
